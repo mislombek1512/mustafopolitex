@@ -161,6 +161,30 @@ class ApiController extends Controller
                 ]);
         }
     }
+
+    public function getOneNews(Request $req, $id) {
+        try{
+
+            $news = Nam::where("id",$id)->first();
+            return response()->json([
+                'ok' => true,
+                "data"=>$news
+            ]);
+        }catch(\Exception $e) {
+            if (str_contains($e->getMessage(), 'seen')) {
+                return response()->json([
+                    'ok' => false,
+                    'msg' => "Invalid id.",
+                ]);
+            }
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
+
     public function getfacts(Request $req)
     {
         try {
@@ -249,9 +273,6 @@ class ApiController extends Controller
         $product->save();
         return response()->json([
             'message' => ' Product Added Successfully:',
-            // 'Telefon:' => $product->name,
-            // 'User:' => $product->phone,
-            // 'Comment:' => $product->message,
         ], 200);
     }
 }
