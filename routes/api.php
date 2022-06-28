@@ -29,4 +29,4 @@ Route::get('/facts', [ApiController::class, 'getfacts']);
 Route::get('/congratulations', [ApiController::class, 'getcongratulations']);
 Route::get('/rectorats', [ApiController::class, 'getrectorats']);
 Route::get('/receptions', [ApiController::class, 'getReception']);
-Route::get('/add/receptions', [ApiController::class, 'postReception']);
+Route::post('/add/receptions', [ApiController::class, 'postReception']);
