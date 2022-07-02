@@ -278,7 +278,7 @@ class ApiController extends Controller
         return response()->json([
             'message' => ' Product Added Successfully:',
         ], 200);
-    }
+    }    
     public function getinteractivservs(Request $req) {
         try{
             $data = Interactivserv::all();
