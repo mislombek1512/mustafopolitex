@@ -24,6 +24,7 @@ Route::get('/studentmens', [ApiController::class, 'getstudentmens']);
 Route::get('/students', [ApiController::class, 'getstudents']);
 Route::get('/bachelors', [ApiController::class, 'getbachelors']);
 Route::get('/graduats', [ApiController::class, 'getgraduats']);
+Route::get('/graduats/count/{id}', [ApiController::class, 'getGraduatsPag']);
 Route::get('/nams', [ApiController::class, 'getnams']);
 Route::get('/nams/{id}', [ApiController::class, 'getOneNews']);
 Route::get('/nams/count/{id}', [ApiController::class, 'getNewsPag']);
