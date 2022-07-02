@@ -3,13 +3,16 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Architectural;
 use App\Models\Bachelor;
 use App\Models\Bussin;
+use App\Models\Charter;
 use App\Models\Congratulation;
 use App\Models\Contact;
 use App\Models\Fact;
 use App\Models\Facult;
 use App\Models\Graduat;
+use App\Models\Interactivserv;
 use App\Models\Nam;
 use App\Models\Reception;
 use App\Models\Rectorat;
@@ -275,4 +278,50 @@ class ApiController extends Controller
             'message' => ' Product Added Successfully:',
         ], 200);
     }
+    public function getinteractivservs(Request $req) {
+        try{
+            $data = Interactivserv::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+    public function getcharters(Request $req) {
+        try{
+            $data = Charter::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+    public function getarchitecturals(Request $req) {
+        try{
+            $data = Architectural::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
 }

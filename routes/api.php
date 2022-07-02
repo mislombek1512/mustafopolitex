@@ -30,4 +30,7 @@ Route::get('/facts', [ApiController::class, 'getfacts']);
 Route::get('/congratulations', [ApiController::class, 'getcongratulations']);
 Route::get('/rectorats', [ApiController::class, 'getrectorats']);
 Route::get('/receptions', [ApiController::class, 'getReception']);
+Route::get('/charters', [ApiController::class, 'getcharters']);
+Route::get('/architecturals', [ApiController::class, 'getarchitecturals']);
+Route::get('/interactivservs', [ApiController::class, 'getinteractivservs']);
 Route::post('/add/receptions', [ApiController::class, 'postReception']);
