@@ -26,6 +26,7 @@ Route::get('/bachelors', [ApiController::class, 'getbachelors']);
 Route::get('/graduats', [ApiController::class, 'getgraduats']);
 Route::get('/nams', [ApiController::class, 'getnams']);
 Route::get('/nams/{id}', [ApiController::class, 'getOneNews']);
+Route::get('/nams/count/{id}', [ApiController::class, 'getNewsPag']);
 Route::get('/facts', [ApiController::class, 'getfacts']);
 Route::get('/congratulations', [ApiController::class, 'getcongratulations']);
 Route::get('/rectorats', [ApiController::class, 'getrectorats']);
@@ -35,4 +36,5 @@ Route::get('/architecturals', [ApiController::class, 'getarchitecturals']);
 Route::get('/interactivservs', [ApiController::class, 'getinteractivservs']);
 Route::get('/sliders', [ApiController::class, 'getsliders']);
 Route::get('/sliders/{id}', [ApiController::class, 'getOneSliders']);
+
 Route::post('/add/receptions', [ApiController::class, 'postReception']);
