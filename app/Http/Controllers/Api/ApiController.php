@@ -16,6 +16,7 @@ use App\Models\Interactivserv;
 use App\Models\Nam;
 use App\Models\Reception;
 use App\Models\Rectorat;
+use App\Models\Slider;
 use App\Models\Student;
 use App\Models\Studentmen;
 use Illuminate\Http\Request;
@@ -323,5 +324,40 @@ class ApiController extends Controller
             ]);
         }
     }
+    public function getsliders(Request $req) {
+        try{
+            $data = Slider::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
 
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+    public function getOneSliders(Request $req, $id) {
+        try{
+
+            $news = Slider::where("id",$id)->first();
+            return response()->json([
+                'ok' => true,
+                "data"=>$news
+            ]);
+        }catch(\Exception $e) {
+            if (str_contains($e->getMessage(), 'seen')) {
+                return response()->json([
+                    'ok' => false,
+                    'msg' => "Invalid id.",
+                ]);
+            }
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
 }

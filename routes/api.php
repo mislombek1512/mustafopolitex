@@ -33,4 +33,6 @@ Route::get('/receptions', [ApiController::class, 'getReception']);
 Route::get('/charters', [ApiController::class, 'getcharters']);
 Route::get('/architecturals', [ApiController::class, 'getarchitecturals']);
 Route::get('/interactivservs', [ApiController::class, 'getinteractivservs']);
+Route::get('/sliders', [ApiController::class, 'getsliders']);
+Route::get('/sliders/{id}', [ApiController::class, 'getOneSliders']);
 Route::post('/add/receptions', [ApiController::class, 'postReception']);
