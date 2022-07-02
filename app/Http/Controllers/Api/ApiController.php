@@ -12,6 +12,7 @@ use App\Models\Contact;
 use App\Models\Fact;
 use App\Models\Facult;
 use App\Models\Graduat;
+use App\Models\Histor;
 use App\Models\Interactivserv;
 use App\Models\Nam;
 use App\Models\Reception;
@@ -327,6 +328,21 @@ class ApiController extends Controller
     public function getsliders(Request $req) {
         try{
             $data = Slider::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+    public function gethistors(Request $req) {
+        try{
+            $data = Histor::all();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
