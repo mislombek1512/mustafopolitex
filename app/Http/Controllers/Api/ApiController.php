@@ -15,9 +15,15 @@ use App\Models\Department;
 use App\Models\Departmentabout;
 use App\Models\Fact;
 use App\Models\Facult;
+use App\Models\Facultyabout;
+use App\Models\Facultydirector;
+use App\Models\Facultymember;
 use App\Models\Graduat;
 use App\Models\Histor;
 use App\Models\Interactivserv;
+use App\Models\Kafedraabout;
+use App\Models\Kafedradirector;
+use App\Models\Kafedramen;
 use App\Models\Nam;
 use App\Models\Reception;
 use App\Models\Rectorat;
@@ -501,6 +507,98 @@ class ApiController extends Controller
                 "total_number"=>Rectorat::all()->count()
             ]);
 
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
+    public function getfacultydirectors(Request $req) {
+        try{
+            $data = Facultydirector::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+    public function getfacultymembers(Request $req) {
+        try{
+            $data = Facultymember::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+    public function getfacultyabouts(Request $req) {
+        try{
+            $data = Facultyabout::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+    public function getkafedramens(Request $req) {
+        try{
+            $data = Kafedramen::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+    public function getkafedradirectors(Request $req) {
+        try{
+            $data = Kafedradirector::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
+    public function getkafedraabouts(Request $req) {
+        try{
+            $data = Kafedraabout::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
 
         }catch(\Exception $e) {
             return response()->json([

@@ -44,5 +44,11 @@ Route::get('/centers', [ApiController::class, 'getcenters']);
 Route::get('/centerabouts', [ApiController::class, 'getcenterabouts']);
 Route::get('/departments', [ApiController::class, 'getdepartments']);
 Route::get('/departmentabouts', [ApiController::class, 'getdepartmentabouts']);
+Route::get('/facultydirectors', [ApiController::class, 'getfacultydirectors']);
+Route::get('/facultymembers', [ApiController::class, 'getfacultymembers']);
+Route::get('/facultyabouts', [ApiController::class, 'getfacultyabouts']);
+Route::get('/kafedramens', [ApiController::class, 'getkafedramens']);
+Route::get('/kafedradirectors', [ApiController::class, 'getkafedradirectors']);
+Route::get('/kafedraabouts', [ApiController::class, 'getkafedraabouts']);
 
 Route::post('/add/receptions', [ApiController::class, 'postReception']);
