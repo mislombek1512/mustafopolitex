@@ -18,6 +18,9 @@ use App\Models\Facult;
 use App\Models\Facultyabout;
 use App\Models\Facultydirector;
 use App\Models\Facultymember;
+use App\Models\Filial;
+use App\Models\Filialabout;
+use App\Models\Filialdirector;
 use App\Models\Graduat;
 use App\Models\Histor;
 use App\Models\Interactivserv;
@@ -595,6 +598,53 @@ class ApiController extends Controller
     public function getkafedraabouts(Request $req) {
         try{
             $data = Kafedraabout::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
+    public function getfilials(Request $req) {
+        try{
+            $data = Filial::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+    public function getfilialdirectors(Request $req) {
+        try{
+            $data = Filialdirector::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
+    public function getfilialabouts(Request $req) {
+        try{
+            $data = Filialabout::all();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
