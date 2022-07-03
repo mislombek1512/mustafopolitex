@@ -40,5 +40,9 @@ Route::get('/interactivservs', [ApiController::class, 'getinteractivservs']);
 Route::get('/sliders', [ApiController::class, 'getsliders']);
 Route::get('/sliders/{id}', [ApiController::class, 'getOneSliders']);
 Route::get('/histors', [ApiController::class, 'gethistors']);
+Route::get('/centers', [ApiController::class, 'getcenters']);
+Route::get('/centerabouts', [ApiController::class, 'getcenterabouts']);
+Route::get('/departments', [ApiController::class, 'getdepartments']);
+Route::get('/departmentabouts', [ApiController::class, 'getdepartmentabouts']);
 
 Route::post('/add/receptions', [ApiController::class, 'postReception']);

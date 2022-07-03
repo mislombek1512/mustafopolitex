@@ -6,9 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Architectural;
 use App\Models\Bachelor;
 use App\Models\Bussin;
+use App\Models\Center;
+use App\Models\Centerabout;
 use App\Models\Charter;
 use App\Models\Congratulation;
 use App\Models\Contact;
+use App\Models\Department;
+use App\Models\Departmentabout;
 use App\Models\Fact;
 use App\Models\Facult;
 use App\Models\Graduat;
@@ -298,6 +302,66 @@ class ApiController extends Controller
     public function getcharters(Request $req) {
         try{
             $data = Charter::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+    public function getcenters(Request $req) {
+        try{
+            $data = Center::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+    public function getcenterabouts(Request $req) {
+        try{
+            $data = Centerabout::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+    public function getdepartments(Request $req) {
+        try{
+            $data = Department::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+    public function getdepartmentabouts(Request $req) {
+        try{
+            $data = Departmentabout::all();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
