@@ -54,5 +54,9 @@ Route::get('/kafedraworkers', [ApiController::class, 'getkafedraworkers']);
 Route::get('/filials', [ApiController::class, 'getfilials']);
 Route::get('/filialdirectors', [ApiController::class, 'getfilialdirectors']);
 Route::get('/filialabouts', [ApiController::class, 'getfilialabouts']);
+Route::get('/applicantmens', [ApiController::class, 'getapplicantmens']);
+Route::get('/uniquelinks', [ApiController::class, 'getuniquelinks']);
+Route::get('/corruptionsectors', [ApiController::class, 'getcorruptionsectors']);
+Route::get('/corruptionmens', [ApiController::class, 'getcorruptionmens']);
 
 Route::post('/add/receptions', [ApiController::class, 'postReception']);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Applicantmen;
 use App\Models\Architectural;
 use App\Models\Bachelor;
 use App\Models\Bussin;
@@ -11,6 +12,8 @@ use App\Models\Centerabout;
 use App\Models\Charter;
 use App\Models\Congratulation;
 use App\Models\Contact;
+use App\Models\Corruptionmen;
+use App\Models\Corruptionsector;
 use App\Models\Department;
 use App\Models\Departmentabout;
 use App\Models\Fact;
@@ -34,6 +37,7 @@ use App\Models\Rectorat;
 use App\Models\Slider;
 use App\Models\Student;
 use App\Models\Studentmen;
+use App\Models\Uniquelink;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -293,7 +297,7 @@ class ApiController extends Controller
         return response()->json([
             'message' => ' Product Added Successfully:',
         ], 200);
-    }    
+    }
     public function getinteractivservs(Request $req) {
         try{
             $data = Interactivserv::all();
@@ -662,6 +666,70 @@ class ApiController extends Controller
     public function getfilialabouts(Request $req) {
         try{
             $data = Filialabout::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
+    public function getapplicantmens(Request $req) {
+        try{
+            $data = Applicantmen::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
+    public function getuniquelinks(Request $req) {
+        try{
+            $data = Uniquelink::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
+    public function getcorruptionsectors(Request $req) {
+        try{
+            $data = Corruptionsector::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
+    public function getcorruptionmens(Request $req) {
+        try{
+            $data = Corruptionmen::all();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
