@@ -50,6 +50,7 @@ Route::get('/facultyabouts', [ApiController::class, 'getfacultyabouts']);
 Route::get('/kafedramens', [ApiController::class, 'getkafedramens']);
 Route::get('/kafedradirectors', [ApiController::class, 'getkafedradirectors']);
 Route::get('/kafedraabouts', [ApiController::class, 'getkafedraabouts']);
+Route::get('/kafedraworkers', [ApiController::class, 'getkafedraworkers']);
 Route::get('/filials', [ApiController::class, 'getfilials']);
 Route::get('/filialdirectors', [ApiController::class, 'getfilialdirectors']);
 Route::get('/filialabouts', [ApiController::class, 'getfilialabouts']);

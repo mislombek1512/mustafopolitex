@@ -27,6 +27,7 @@ use App\Models\Interactivserv;
 use App\Models\Kafedraabout;
 use App\Models\Kafedradirector;
 use App\Models\Kafedramen;
+use App\Models\Kafedraworker;
 use App\Models\Nam;
 use App\Models\Reception;
 use App\Models\Rectorat;
@@ -582,6 +583,22 @@ class ApiController extends Controller
     public function getkafedradirectors(Request $req) {
         try{
             $data = Kafedradirector::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
+    public function getkafedraworkers(Request $req) {
+        try{
+            $data = Kafedraworker::all();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
