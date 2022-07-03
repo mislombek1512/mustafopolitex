@@ -422,4 +422,27 @@ class ApiController extends Controller
             ]);
         }
     }
+    public function getRektoratsPag(Request $req,$count) {
+        try{
+            //
+            if(intval($count) == 0) {
+                throw new \ErrorException('not found');
+            }
+
+
+            $data = Rectorat::orderBy("created_at","DESC")->simplePaginate($count);
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+                "total_number"=>Rectorat::all()->count()
+            ]);
+
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
 }

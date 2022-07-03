@@ -32,6 +32,7 @@ Route::get('/facts', [ApiController::class, 'getfacts']);
 Route::get('/facults', [ApiController::class, 'getfacults']);
 Route::get('/congratulations', [ApiController::class, 'getcongratulations']);
 Route::get('/rectorats', [ApiController::class, 'getrectorats']);
+Route::get('/rectorats/count/{id}', [ApiController::class, 'getRektoratsPag']);
 Route::get('/receptions', [ApiController::class, 'getReception']);
 Route::get('/charters', [ApiController::class, 'getcharters']);
 Route::get('/architecturals', [ApiController::class, 'getarchitecturals']);
