@@ -698,11 +698,11 @@ class ApiController extends Controller
     public function getuniquelinks(Request $req) {
         try{
             if($req->lang=='uz'){
-                $data = Uniquelink::get('title_uz');
+                $data = Uniquelink::firts('title_uz');
             } else if($req->lang=='ru'){
-                $data = Uniquelink::get('title_ru');
+                $data = Uniquelink::firts('title_ru');
             }else if($req->lang=='en'){
-                $data = Uniquelink::get('title_en');
+                $data = Uniquelink::firts('title_en');
             }
             return response()->json([
                 'ok' => true,
