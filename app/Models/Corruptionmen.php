@@ -10,7 +10,7 @@ class Corruptionmen extends Model
 
 
 
-    public function corruptionmens()
+    public function corruptionsectors()
     {
         return $this->hasMany(Corruptionsectors::class, 'menu_uz', 'menu_uz');
     }
