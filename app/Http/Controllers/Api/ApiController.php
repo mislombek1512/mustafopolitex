@@ -719,10 +719,10 @@ class ApiController extends Controller
         }
     }
 
-    public function getcorruptionsectors(Request $req,Corruptionmen $corruptionmen )
+    public function getcorruptionsectors(Request $req, Corruptionmen $corruptionmen)
     {
         try {
-            $data = $corruptionmen->corruptionsectors;
+            $data = $corruptionmen->corruptionsectors()->first();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
