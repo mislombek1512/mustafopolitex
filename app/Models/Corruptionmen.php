@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Corruptionsectors;
+use App\Models\Corruptionsector;
 
 class Corruptionmen extends Model
 {
@@ -12,6 +12,6 @@ class Corruptionmen extends Model
 
     public function corruptionsectors()
     {
-        return $this->hasMany(Corruptionsectors::class, 'menu_uz', 'menu_uz');
+        return $this->hasMany(Corruptionsector::class, 'menu_uz', 'menu_uz');
     }
 }
