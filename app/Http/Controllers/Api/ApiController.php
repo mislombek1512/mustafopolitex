@@ -293,13 +293,15 @@ class ApiController extends Controller
         $product->phone = $request->phone;
         $product->matn = $request->matn;
         $product->mavsu = $request->mavsu;
-        if ($file = $request->file('file')) {
-            $path = $file->store('public/files');
-            $product->fayl = $path;
-        }
+
+        $file = $request->file('file');
+        $path = $file->store('public/files');
+        $product->fayl = $path;
+
         $product->save();
         return response()->json([
             'message' => ' Product Added Successfully:',
+            'fileurl' => $path,
         ], 200);
     }
     public function getinteractivservs(Request $req)
@@ -711,7 +713,7 @@ class ApiController extends Controller
                 }
             }
             return response()->json(
-               $data,
+                $data,
             );
         } catch (\Exception $e) {
             return response()->json([
