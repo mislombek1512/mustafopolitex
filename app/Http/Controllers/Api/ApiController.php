@@ -39,6 +39,7 @@ use App\Models\Student;
 use App\Models\Studentmen;
 use App\Models\Uniquelink;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ApiController extends Controller
 {
@@ -296,7 +297,7 @@ class ApiController extends Controller
 
         $fayl = $request->file('fayl');
         $path = $fayl->store('files');
-        $product->fayl = $path;
+        $product->fayl = Storage::url($path);;
 
         $product->save();
         return response()->json([
