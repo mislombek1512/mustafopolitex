@@ -294,8 +294,8 @@ class ApiController extends Controller
         $product->matn = $request->matn;
         $product->mavsu = $request->mavsu;
 
-        $file = $request->file('file');
-        $path = $file->store('public/files');
+        $fayl = $request->fayl('fayl');
+        $path = $fayl->store('public/files');
         $product->fayl = $path;
 
         $product->save();
