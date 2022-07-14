@@ -293,7 +293,10 @@ class ApiController extends Controller
         $product->phone = $request->phone;
         $product->matn = $request->matn;
         $product->mavsu = $request->mavsu;
-        $product->fayl = $request->fayl;
+        if ($file = $request->file('file')) {
+            $path = $file->store('public/files');
+            $product->fayl = $path;
+        }
         $product->save();
         return response()->json([
             'message' => ' Product Added Successfully:',
