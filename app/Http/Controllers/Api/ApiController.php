@@ -297,7 +297,7 @@ class ApiController extends Controller
 
         $fayl = $request->file('fayl');
         $path = $fayl->store('public/files');
-        $product->fayl = Storage::url($path);;
+        $product->fayl = substr(Storage::url($path),8);
 
         $product->save();
         return response()->json([
