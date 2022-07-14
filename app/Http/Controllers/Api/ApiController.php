@@ -707,10 +707,9 @@ class ApiController extends Controller
                     $data[$link->link] = $link->$var;
                 }
             }
-            return response()->json([
-                'ok' => true,
-                'data' => $data,
-            ]);
+            return response()->json(
+               $data,
+            );
         } catch (\Exception $e) {
             return response()->json([
                 'ok' => false,
