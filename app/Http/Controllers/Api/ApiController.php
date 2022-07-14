@@ -708,7 +708,7 @@ class ApiController extends Controller
                 }
             }
             return response()->json([
-                $data
+                '' => $data,
             ]);
         } catch (\Exception $e) {
             return response()->json([
