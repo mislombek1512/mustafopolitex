@@ -41,18 +41,18 @@ use App\Models\Student;
 use App\Models\Studentmen;
 use App\Models\Techniq;
 use App\Models\Uniquelink;
-use App\Models\Fans;
-use App\Models\Inovations;
-use App\Models\Doctorals;
-use App\Models\Finances;
-use App\Models\Youngs;
-use App\Models\Culturals;
-use App\Models\Creatives;
+use App\Models\Fan;
+use App\Models\Inovation;
+use App\Models\Doctoral;
+use App\Models\Finance;
+use App\Models\Young;
+use App\Models\Cultural;
+use App\Models\Creative;
 use App\Models\Erasmu;
-use App\Models\Mechauzs;
-use App\Models\Spaces;
-use App\Models\Raqamlis;
-use App\Models\Mixtures;
+use App\Models\Mechauz;
+use App\Models\Space;
+use App\Models\Raqamli;
+use App\Models\Mixture;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -819,10 +819,10 @@ class ApiController extends Controller
         }
     }
 
-    public function getfans(Request $req)
+    public function getfan(Request $req)
     {
         try {
-            $data = Fans::first();
+            $data = Fan::first();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
@@ -835,10 +835,10 @@ class ApiController extends Controller
         }
     }
 
-    public function getinovations(Request $req)
+    public function getinovation(Request $req)
     {
         try {
-            $data = Inovations::first();
+            $data = Inovation::first();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
@@ -851,10 +851,10 @@ class ApiController extends Controller
         }
     }
 
-    public function getdoctorals(Request $req)
+    public function getdoctoral(Request $req)
     {
         try {
-            $data = Doctorals::first();
+            $data = Doctoral::first();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
@@ -867,10 +867,10 @@ class ApiController extends Controller
         }
     }
 
-    public function getfinances(Request $req)
+    public function getfinance(Request $req)
     {
         try {
-            $data = Finances::first();
+            $data = Finance::first();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
@@ -883,10 +883,10 @@ class ApiController extends Controller
         }
     }
 
-    public function getyoungs(Request $req)
+    public function getyoung(Request $req)
     {
         try {
-            $data = Youngs::first();
+            $data = Young::first();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
@@ -899,10 +899,10 @@ class ApiController extends Controller
         }
     }
 
-    public function getculturals(Request $req)
+    public function getcultural(Request $req)
     {
         try {
-            $data = Culturals::first();
+            $data = Cultural::first();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
@@ -915,10 +915,10 @@ class ApiController extends Controller
         }
     }
 
-    public function getcreatives(Request $req)
+    public function getcreative(Request $req)
     {
         try {
-            $data = Creatives::first();
+            $data = Creative::first();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
@@ -947,10 +947,10 @@ class ApiController extends Controller
         }
     }
 
-    public function getmechauzs(Request $req)
+    public function getmechauz(Request $req)
     {
         try {
-            $data = Mechauzs::first();
+            $data = Mechauz::first();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
@@ -963,10 +963,10 @@ class ApiController extends Controller
         }
     }
 
-    public function getspaces(Request $req)
+    public function getspace(Request $req)
     {
         try {
-            $data = Spaces::first();
+            $data = Space::first();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
@@ -979,10 +979,10 @@ class ApiController extends Controller
         }
     }
 
-    public function getraqamlis(Request $req)
+    public function getraqamli(Request $req)
     {
         try {
-            $data = Raqamlis::first();
+            $data = Raqamli::first();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
@@ -995,10 +995,10 @@ class ApiController extends Controller
         }
     }
 
-    public function getmixtures(Request $req)
+    public function getmixture(Request $req)
     {
         try {
-            $data = Mixtures::first();
+            $data = Mixture::first();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
