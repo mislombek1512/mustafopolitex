@@ -60,3 +60,5 @@ Route::get('/corruptionsectors/{corruptionmen}', [ApiController::class, 'getcorr
 Route::get('/corruptionmens', [ApiController::class, 'getcorruptionmens']);
 
 Route::post('/add/receptions', [ApiController::class, 'postReception']);
+Route::get('/masterylessons', [ApiController::class, 'getmasterylessons']);
+Route::get('/techniqs', [ApiController::class, 'gettechniqs']);

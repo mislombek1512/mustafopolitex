@@ -31,12 +31,14 @@ use App\Models\Kafedraabout;
 use App\Models\Kafedradirector;
 use App\Models\Kafedramen;
 use App\Models\Kafedraworker;
+use App\Models\Masterylesson;
 use App\Models\Nam;
 use App\Models\Reception;
 use App\Models\Rectorat;
 use App\Models\Slider;
 use App\Models\Student;
 use App\Models\Studentmen;
+use App\Models\Techniq;
 use App\Models\Uniquelink;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -744,6 +746,38 @@ class ApiController extends Controller
     {
         try {
             $data = Corruptionmen::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
+    public function gettechniqs(Request $req)
+    {
+        try {
+            $data = Techniq::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
+    public function getmasterylessons(Request $req)
+    {
+        try {
+            $data = Masterylesson::all();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
