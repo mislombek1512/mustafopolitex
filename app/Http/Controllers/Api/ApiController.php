@@ -48,7 +48,7 @@ use App\Models\Finances;
 use App\Models\Youngs;
 use App\Models\Culturals;
 use App\Models\Creatives;
-use App\Models\Erasmus;
+use App\Models\Erasmu;
 use App\Models\Mechauzs;
 use App\Models\Spaces;
 use App\Models\Raqamlis;
@@ -931,10 +931,10 @@ class ApiController extends Controller
         }
     }
 
-    public function geterasmus(Request $req)
+    public function geterasmu(Request $req)
     {
         try {
-            $data = Erasmus::first();
+            $data = Erasmu::first();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
