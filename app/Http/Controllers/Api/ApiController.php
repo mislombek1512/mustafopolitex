@@ -35,6 +35,7 @@ use App\Models\Masterylesson;
 use App\Models\Nam;
 use App\Models\Reception;
 use App\Models\Rectorat;
+use App\Models\Rekvizt;
 use App\Models\Slider;
 use App\Models\Student;
 use App\Models\Studentmen;
@@ -778,6 +779,22 @@ class ApiController extends Controller
     {
         try {
             $data = Masterylesson::all();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
+    public function getrekvizts(Request $req)
+    {
+        try {
+            $data = Rekvizt::first();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
