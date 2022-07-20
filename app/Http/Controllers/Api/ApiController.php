@@ -41,6 +41,7 @@ use App\Models\Student;
 use App\Models\Studentmen;
 use App\Models\Techniq;
 use App\Models\Uniquelink;
+use App\Models\Uniquelink;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -971,6 +972,22 @@ class ApiController extends Controller
     {
         try {
             $data = Raqamlis::first();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
+    public function getmixtures(Request $req)
+    {
+        try {
+            $data = Mixtures::first();
             return response()->json([
                 'ok' => true,
                 'data' => $data,
