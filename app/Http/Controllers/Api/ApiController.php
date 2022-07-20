@@ -883,7 +883,7 @@ class ApiController extends Controller
         }
     }
 
-    public function getyoung(Request $req)
+    public function getyoungs(Request $req)
     {
         try {
             $data = Young::first();
