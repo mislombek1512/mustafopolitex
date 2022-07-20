@@ -819,7 +819,7 @@ class ApiController extends Controller
         }
     }
 
-    public function getfan(Request $req)
+    public function getfans(Request $req)
     {
         try {
             $data = Fan::first();
@@ -835,7 +835,7 @@ class ApiController extends Controller
         }
     }
 
-    public function getinovation(Request $req)
+    public function getinovations(Request $req)
     {
         try {
             $data = Inovation::first();
@@ -851,7 +851,7 @@ class ApiController extends Controller
         }
     }
 
-    public function getdoctoral(Request $req)
+    public function getdoctorals(Request $req)
     {
         try {
             $data = Doctoral::first();
@@ -867,7 +867,7 @@ class ApiController extends Controller
         }
     }
 
-    public function getfinance(Request $req)
+    public function getfinances(Request $req)
     {
         try {
             $data = Finance::first();
@@ -899,7 +899,7 @@ class ApiController extends Controller
         }
     }
 
-    public function getcultural(Request $req)
+    public function getculturals(Request $req)
     {
         try {
             $data = Cultural::first();
@@ -915,7 +915,7 @@ class ApiController extends Controller
         }
     }
 
-    public function getcreative(Request $req)
+    public function getcreatives(Request $req)
     {
         try {
             $data = Creative::first();
@@ -931,7 +931,7 @@ class ApiController extends Controller
         }
     }
 
-    public function geterasmu(Request $req)
+    public function geterasmus(Request $req)
     {
         try {
             $data = Erasmu::first();
@@ -947,7 +947,7 @@ class ApiController extends Controller
         }
     }
 
-    public function getmechauz(Request $req)
+    public function getmechauzs(Request $req)
     {
         try {
             $data = Mechauz::first();
@@ -963,7 +963,7 @@ class ApiController extends Controller
         }
     }
 
-    public function getspace(Request $req)
+    public function getspaces(Request $req)
     {
         try {
             $data = Space::first();
@@ -979,7 +979,7 @@ class ApiController extends Controller
         }
     }
 
-    public function getraqamli(Request $req)
+    public function getraqamlis(Request $req)
     {
         try {
             $data = Raqamli::first();
@@ -995,7 +995,7 @@ class ApiController extends Controller
         }
     }
 
-    public function getmixture(Request $req)
+    public function getmixtures(Request $req)
     {
         try {
             $data = Mixture::first();
