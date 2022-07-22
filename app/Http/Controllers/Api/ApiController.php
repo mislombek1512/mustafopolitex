@@ -1010,4 +1010,36 @@ class ApiController extends Controller
             ]);
         }
     }
+
+    public function getlowyerpartners(Request $req)
+    {
+        try {
+            $data = Lowyerpartner::first();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
+    public function getlpartners(Request $req)
+    {
+        try {
+            $data = Partner::first();
+            return response()->json([
+                'ok' => true,
+                'data' => $data,
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
 }

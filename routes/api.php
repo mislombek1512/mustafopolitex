@@ -74,3 +74,5 @@ Route::get('/mechauzs', [ApiController::class, 'getmechauzs']);
 Route::get('/spaces', [ApiController::class, 'getspaces']);
 Route::get('/raqamlis', [ApiController::class, 'getraqamlis']);
 Route::get('/mixtures', [ApiController::class, 'getmixtures']);
+Route::get('/lowyerpartners', [ApiController::class, 'getlowyerpartners']);
+Route::get('/partners', [ApiController::class, 'getlpartners']);
